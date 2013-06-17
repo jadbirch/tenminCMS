@@ -1,0 +1,6 @@
+Options +FollowSymLinks -MultiViews
+# Turn mod_rewrite on
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^posts/(.+?)/?$ index.php?post=$1 [L,QSA,NC,NE]
