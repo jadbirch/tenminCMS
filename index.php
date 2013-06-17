@@ -5,7 +5,9 @@
 <html>
 <head>
 	<title><?php if(isset($_GET["post"])) {
-		echo ucwords($_GET["post"]);
+		$posttitle = $_GET["post"];
+		$posttitle = strtr($posttitle, '-', ' ');
+		echo ucwords($posttitle);
 	} else {
 		echo $config['title'];
 	} ?></title>
