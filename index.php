@@ -4,21 +4,30 @@
 ?>
 <html>
 <head>
-	<title><?php if(isset($_GET["post"])) {
-		$posttitle = $_GET["post"];
-		$posttitle = strtr($posttitle, '-', ' ');
-		echo ucwords($posttitle);
-	} else {
-		echo $config['title'];
-	} ?></title>
+	<title><?php tmcms_head(); ?></title>
 </head>
 <body>
+<!-- place the below code block inside your main div, section or container etc. -->
+<div style="width:80%;margin:0 auto;">
+<?php if(post_check() == true) {
+	show_the_post();
+} else { ?>
+	<h1>This is the homepage.</h1>
+	<?php feed_posts();?>
 
-	<?php if(isset($_GET["post"])) {
-		$post = $_GET["post"];
-		$post = file_get_contents($config['directory'] . '/' . $post . '.md');
-		echo $post = Markdown($post);
-	} ?>
+
+
+
+
+
+
+
+
+<?php } ?>
+<div>
+	This div shows on both the homepage and the post page.
+</div>
+</div>
 
 </body>
 </html>
