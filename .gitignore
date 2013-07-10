@@ -12,3 +12,4 @@ ruby/
 simple/
 sql/
 textmanip/
+assets/*.scss
